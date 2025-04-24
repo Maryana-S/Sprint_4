@@ -1,29 +1,21 @@
-package tests.additional_task_tests;
+package ru.praktikum.services.qa.scooter.tests.additional.task;
 
 import jdk.jfr.Description;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import pages.HeaderPage;
-import pages.MainPage;
-import pages.OrderFormPage;
-import pages.external_pages.ExternalPage;
+import ru.praktikum.services.qa.scooter.pages.HeaderPage;
+import ru.praktikum.services.qa.scooter.pages.MainPage;
+import ru.praktikum.services.qa.scooter.pages.OrderFormPage;
+import ru.praktikum.services.qa.scooter.pages.external.ExternalPage;
+import ru.praktikum.services.qa.scooter.tests.BaseTest;
 
 import static org.hamcrest.CoreMatchers.containsString;
 
-public class CheckClickLogo {
-
-    private WebDriver driver;
+public class CheckClickLogo extends BaseTest {
 
     @Test
     @Description("Проверка перехода на главную страницу при клике на логотип 'Самокат' в хедере")
-    public void clickScooterLogoGoToHomePage() {
-
-        driver = new ChromeDriver();
-        driver.get("https://qa-scooter.praktikum-services.ru/");
-
+    public void clickScooterLogoGoToHomePageTest() {
         HeaderPage objHeaderPage = new HeaderPage(driver);
         objHeaderPage.clickOrder();
 
@@ -38,11 +30,7 @@ public class CheckClickLogo {
 
     @Test
     @Description("Проверка перехода на главную страницу Яндекс при клике на логотип 'Яндекс' в хедере")
-    public void clickYandexLogoGoToMainYandex() {
-
-        driver = new ChromeDriver();
-        driver.get("https://qa-scooter.praktikum-services.ru/");
-
+    public void clickYandexLogoGoToMainYandexTest() {
         HeaderPage objHeaderPage = new HeaderPage(driver);
         objHeaderPage.clickYandex();
 
@@ -50,11 +38,5 @@ public class CheckClickLogo {
         externalPage.switchToNewWindow();
         String currentUrl = externalPage.getPageUrl();
         Assert.assertThat("URL текущей страницы отличается от ожидаемого", currentUrl, containsString("ya.ru"));
-
-    }
-
-    @After
-    public void tearDown() {
-        driver.quit();
     }
 }

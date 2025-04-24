@@ -1,4 +1,4 @@
-package pages;
+package ru.praktikum.services.qa.scooter.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;

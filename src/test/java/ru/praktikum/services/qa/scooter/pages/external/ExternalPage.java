@@ -1,4 +1,4 @@
-package pages.external_pages;
+package ru.praktikum.services.qa.scooter.pages.external;
 
 import org.openqa.selenium.WebDriver;
 
