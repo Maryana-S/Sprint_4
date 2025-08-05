@@ -1,7 +1,7 @@
 # Sprint_4
 Project of fourth sprint. Practicum Yandex Scooter
 
-Проект автотестов для сайта Яндекс Самокат(учебный тренажер) https://qa-scooter.praktikum-services.ru/
+Проект UI автотестов для сайта Яндекс Самокат(учебный тренажер) https://qa-scooter.praktikum-services.ru/
 
 Технологии, используемые в проекте:
 
